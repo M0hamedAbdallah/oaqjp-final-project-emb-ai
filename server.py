@@ -21,11 +21,11 @@ def sent_analyzer() -> str:
     text_to_analyze = flask.request.args.get("textToAnalyze", "").strip()
 
     if not text_to_analyze:
-        return "Invalid input! Please enter some text."
+        return "Invalid input! Try again."
 
     result = emotion_detector(text_to_analyze)
     if result["dominant_emotion"] is None:
-        return "Invalid input! Please enter some text."
+        return "Invalid input! Try again."
 
     return f"For the given statement, the system response is {result}."
 
