@@ -1,4 +1,3 @@
-import json as json_library
 import unittest
 from EmotionPredict.emotionPredict_analysis import emotionPredict_analyzer
 
