@@ -1,6 +1,6 @@
 from pathlib import Path
 import flask
-from EmotionPredict.emotionPredict_analysis import EmotionPredict_analyzer
+from EmotionPredict.emotionPredict_analysis import emotionPredict_analyzer
 #Initiate the flask app : TODO
 BASE_DIR = Path(__file__).resolve().parent
 app = flask.Flask(
@@ -13,8 +13,8 @@ app = flask.Flask(
 def sent_analyzer():
     # Retrieve the text to analyze from the request arguments
     text_to_analyze = flask.request.args.get('textToAnalyze')
-    # Pass the text to the EmotionPredict_analyzer function and store the response
-    response = EmotionPredict_analyzer(text_to_analyze)
+    # Pass the text to the emotionPredict_analyzer function and store the response
+    response = emotionPredict_analyzer(text_to_analyze)
     # Extract the label and score from the response
     label = response['label']
     score = response['score']
